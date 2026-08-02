@@ -12,8 +12,17 @@ A comprehensive AI agent that:
 
 ## Usage
 ```bash
-python main.py --resume resume.docx --jd "job_description.txt"
+# Score resume against ATS systems only
+python main.py --resume data/resume.docx
+
+# Score resume and optimize for specific job
+python main.py --resume data/resume.docx --jd data/job_description.txt
+
+# Non-interactive mode (skip skill verification)
+python main.py --resume data/resume.docx --jd data/job_description.txt --non-interactive
 ```
+
+By default reports and generated files are written to the output directory named "output". Use --output to change the destination.
 
 ## Features
 - ATS scoring (6 systems)
