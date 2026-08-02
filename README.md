@@ -11,9 +11,28 @@ A comprehensive AI agent that:
 8. **Generates reports** - detailed before/after analysis
 
 ## Usage
+The entry point is main.py. Resume (.docx) is required; job description (.txt) is optional.
+
+Examples:
 ```bash
-python main.py --resume resume.docx --jd "job_description.txt"
+# Score resume against ATS systems only
+python main.py --resume data/resume.docx
+
+# Score resume and optimize for specific job
+python main.py --resume data/resume.docx --jd data/job_description.txt
+
+# Non-interactive mode (skip skill verification)
+python main.py --resume data/resume.docx --jd data/job_description.txt --non-interactive
+
+# Specify output directory for reports
+python main.py --resume data/resume.docx --output my_reports
 ```
+
+Available flags (as implemented in main.py):
+- --resume    Path to resume .docx file (required)
+- --jd        Path to job description text file (optional)
+- --non-interactive    Skip interactive skill verification
+- --output    Output directory for reports (default: output)
 
 ## Features
 - ATS scoring (6 systems)
